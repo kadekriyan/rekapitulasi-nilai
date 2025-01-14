@@ -9,6 +9,7 @@
 
 <body>
     <h1>Selamat, anda berhasil login</h1>
+    <a href="<?= base_url('dosen/logout'); ?>">Logout</a>
 </body>
 
 </html>

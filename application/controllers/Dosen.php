@@ -24,7 +24,7 @@ class Dosen extends CI_Controller
 
     public function process_login()
     {
-        // Validasi form input
+
         $this->form_validation->set_rules('nik', 'NIK', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
@@ -61,6 +61,12 @@ class Dosen extends CI_Controller
         }
 
         $this->load->view('dosen/dashboard');
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('index');
     }
 }
 ?>
