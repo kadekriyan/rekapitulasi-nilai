@@ -26,6 +26,8 @@ class Welcome extends CI_Controller
 
 	public function halaman2()
 	{
-		$this->load->view('test');
+		$data["judul"] = "Hlaman";
+		$data["isi"] = "kadek";
+		$this->load->view('test', $data);
 	}
 }
