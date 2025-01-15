@@ -25,3 +25,14 @@
 .footer-login {
     width: 25%;
 }
+
+/* Custom Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+    margin-top: 30px;
+}
+
+

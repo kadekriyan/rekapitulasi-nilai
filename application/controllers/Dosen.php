@@ -59,7 +59,6 @@ class Dosen extends CI_Controller
         if (!$this->session->userdata('dosen_id')) {
             redirect('index');
         }
-
         $this->load->view('dosen/dashboard');
     }
 

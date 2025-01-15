@@ -61,12 +61,12 @@
                     <label for="nik" class="form-label">NIK</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="nik" aria-describedby="basic-addon3"
-                            placeholder="Masukkan NIK" name='nik'>
+                            placeholder="Masukkan NIK" name='nik' required>
                     </div>
                     <label for="password" class="form-label">Password</label>
                     <div class="input-group mb-3">
                         <input type="password" class="form-control" id="password" aria-describedby="basic-addon3"
-                            placeholder="Masukkan Password" name='password'>
+                            placeholder="Masukkan Password" name='password' required>
                     </div>
                     <button class="btn btn-login text-center bg-warning my-4 w-100" type="submit"
                         name="submit">Login</button>
