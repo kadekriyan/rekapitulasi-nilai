@@ -42,7 +42,7 @@
     </div>
     <div class="container justify-content-center form-login rounded">
         <div class="form p-2 mx-1 py-4 justify-content-center">
-            <form action="<?= base_url('dosen/process_login'); ?>" method="post">
+            <form action="<?= base_url('auth/process_login'); ?>" method="post">
                 <div class="container">
                     <span class="text-center">
                         <h3>Login Dosen</h3>
