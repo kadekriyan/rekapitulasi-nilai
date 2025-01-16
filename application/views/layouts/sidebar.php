@@ -4,7 +4,7 @@
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
             <li class="active">
-                <a href="<?= base_url('#'); ?>">
+                <a href="<?= base_url('dashboard'); ?>">
                     <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                     <span class="pcoded-mcaret"></span>
@@ -17,13 +17,15 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <li class=" ">
-                        <a href="accordion.html">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Teknik Informatika</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
+                    <?php foreach ($mata_kuliah as $mk): ?>
+                        <li class=" ">
+                            <a href="accordion.html">
+                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"><?= $mk->nama ?></span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
 
                 </ul>
             </li>
@@ -51,7 +53,7 @@
                 </ul>
             </li>
             <li>
-                <a href="form-elements-component.html">
+                <a href="<?= base_url('dashboard/mahasiswa'); ?>">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Mahasiswa</span>
                     <span class="pcoded-mcaret"></span>

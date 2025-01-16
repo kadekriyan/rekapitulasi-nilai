@@ -34,6 +34,8 @@
     <link rel="stylesheet" type="text/css"
         href="<?= base_url(); ?>assets/template-assets/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
 </head>
 

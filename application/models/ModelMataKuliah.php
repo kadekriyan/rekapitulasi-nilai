@@ -19,6 +19,6 @@ class ModelMataKuliah extends CI_Model
 
         $query = $this->db->get();
 
-        return $query->result(); // Mengembalikan hasil sebagai array of objects
+        return $query->result();
     }
 }
