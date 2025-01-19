@@ -19,9 +19,11 @@
                 <ul class="pcoded-submenu">
                     <?php foreach ($mata_kuliah as $mk): ?>
                         <li class=" ">
-                            <a href="accordion.html">
-                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"><?= $mk->nama ?></span>
+                            <a
+                                href="<?= base_url('dashboard/mata-kuliah/' . $this->session->userdata('dosen_id') . '/' . $mk->id . ''); ?>">
+                                <span class=" pcoded-micon"><i class="ti-angle-right"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">
+                                    <?= $mk->nama ?></span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>

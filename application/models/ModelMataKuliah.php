@@ -21,4 +21,9 @@ class ModelMataKuliah extends CI_Model
 
         return $query->result();
     }
+    public function detailMataKuliah($mata_kuliah_id)
+    {
+        $query = $this->db->get_where('mata_kuliah', ['id' => $mata_kuliah_id]);
+        return $query->result();
+    }
 }

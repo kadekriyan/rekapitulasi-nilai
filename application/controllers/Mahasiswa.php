@@ -23,9 +23,9 @@ class MataKuliah extends CI_Controller
         $this->load->view('layouts/footer');
     }
 
-    public function login()
-    {
-        $this->load->view('pages/login');
-    }
+    // public function login()
+    // {
+    //     $this->load->view('pages/login');
+    // }
 
 }

@@ -52,49 +52,6 @@
                         <?php endforeach; ?>
                         <!-- card1 end -->
 
-                        <!-- table Start -->
-                        <div class="col-md-12 col-xl-8">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Mahasiswa</h5>
-                                    <div class="card-header-left ">
-                                    </div>
-
-                                </div>
-                                <div class="card-block">
-                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>NIM</th>
-                                                <th>Prodi</th>
-                                                <th>Jenis Kelamain</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011-04-25</td>
-                                            </tr>
-                                        </tbody>
-                                        <!-- <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                            </tr>
-                                        </tfoot> -->
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
