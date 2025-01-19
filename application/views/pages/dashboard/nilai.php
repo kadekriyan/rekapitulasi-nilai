@@ -4,12 +4,59 @@
             <div class="page-wrapper">
 
                 <div class="page-body">
-                    <a class="btn btn-primary mb-4" href="#">
+                    <a class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#tambahNilaiModal">
                         <i class="ti-plus"></i>
                         <span>Tambah Nilai</span>
                     </a>
-                    <div class="row">
 
+                    <div class="modal fade" id="tambahNilaiModal" tabindex="-1" aria-labelledby="tambahNilaiModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tambahNilaiModalLabel">Tambah Penilaian</h5>
+                                    <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                                        <i class="ti-close"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="POST"
+                                        action="detail_nilai.php?id_mahasiswa=<?= "" ?>&id_mata_kuliah=<?= "" ?>">
+                                        <input type="hidden" class="form-control" id="id_mahasiswa" name="id_mahasiswa"
+                                            value="<?= "" ?>">
+                                        <input type="hidden" class="form-control" id="id_mata_kuliah"
+                                            name="id_mata_kuliah" value="<?= "" ?>">
+                                        <div class="mb-3">
+                                            <label for="nilai" class="form-label">Nilai</label>
+                                            <input type="number" class="form-control" id="nilai" name="nilai">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="keterangan" class="form-label">Keterangan</label>
+                                            <textarea class="form-control" id="keterangan" name="keterangan"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="type" class="form-label">Type</label>
+                                            <select name="type" id="type" class="form-control">
+                                                <option value="diskusi">Diskusi</option>
+                                                <option value="praktikum">Praktikum</option>
+                                                <option value="responsi">Responsi</option>
+                                                <option value="uts">UTS</option>
+                                                <option value="uas">UAS</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
 
                         <?php foreach ($detail_mahasiswa as $mhs): ?>
 
