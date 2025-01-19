@@ -21,17 +21,11 @@ class ModelNilai extends CI_Model
             $query = $this->db->get();
             $result = $query->result_array();
 
-
-            // Gabungkan hasil query ke dalam $data
-            if (!empty($result)) {
-                $data = array_merge($data, $result);
-            } else {
-                $res["type"] = $t;
-                $data = array_merge($data, $res);
-            }
+            $data[$t] = !empty($result) ? $result : [];
         }
 
         return $data;
+
     }
 
 }

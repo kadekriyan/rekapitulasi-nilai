@@ -91,32 +91,5 @@ class Dashboard extends CI_Controller
         $this->load->view('layouts/footer');
     }
 
-    public function d()
-    {
-        $type = array('diskusi', 'praktikum', 'responsi', 'uts', 'uas');
-        $data = array();
-
-        foreach ($type as $t) {
-            $this->db->select('m.nama, mk.nama AS mata_kuliah, n.nilai, n.type, n.keterangan, n.id');
-            $this->db->from('nilai_mata_kuliah_mahasiswa n');
-            $this->db->join('mahasiswa m', 'n.id_mahasiswa = m.id');
-            $this->db->join('mata_kuliah mk', 'n.id_mata_kuliah = mk.id');
-            $this->db->where('m.id', 2);
-            $this->db->where('mk.id', 1);
-            $this->db->where('n.type', $t);
-            $query = $this->db->get();
-            $result = $query->result_array();
-
-            // Jika hasil kosong, tetap tambahkan dengan array kosong
-            $data[$t] = !empty($result) ? $result : [];
-        }
-
-        // return $data;
-        var_dump($data);
-
-    }
-
-
-
 
 }
