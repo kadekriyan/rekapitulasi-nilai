@@ -1,7 +1,9 @@
 <div class="pcoded-content">
     <div class="pcoded-inner-content">
-        <div class="main-body">
+        <div class="main-body">p
             <div class="page-wrapper">
+                <!-- <?php echo $this->session->flashdata('error'); ?> -->
+                <!-- <?php echo $this->session->flashdata('success'); ?> -->
 
                 <div class="page-body">
                     <a class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#tambahNilaiModal">
@@ -20,12 +22,11 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST"
-                                        action="detail_nilai.php?id_mahasiswa=<?= "" ?>&id_mata_kuliah=<?= "" ?>">
-                                        <input type="hidden" class="form-control" id="id_mahasiswa" name="id_mahasiswa"
-                                            value="<?= "" ?>">
-                                        <input type="hidden" class="form-control" id="id_mata_kuliah"
-                                            name="id_mata_kuliah" value="<?= "" ?>">
+                                    <form method="POST" action="<?= base_url('nilai/tambah-nilai') ?>">
+                                        <input type="hidden" class="form-control" id="mahasiswa_id" name="mahasiswa_id"
+                                            value="<?= $detail_mahasiswa[0]->id ?>">
+                                        <input type="hidden" class="form-control" id="mata_kuliah_id"
+                                            name="mata_kuliah_id" value="<?= $detail_mata_kuliah[0]->id ?>">
                                         <div class="mb-3">
                                             <label for="nilai" class="form-label">Nilai</label>
                                             <input type="number" class="form-control" id="nilai" name="nilai">
