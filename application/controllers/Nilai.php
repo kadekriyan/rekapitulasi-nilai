@@ -19,11 +19,11 @@ class Nilai extends CI_Controller
             return redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         } else {
             $data = array(
-                "id_mahasiswa" => $this->input->post('mahasiswa_id'),
-                "id_mata_kuliah" => $this->input->post('mata_kuliah_id'),
-                "nilai" => $this->input->post('nilai'),
-                "keterangan" => $this->input->post('keterangan'),
-                "type" => $this->input->post('type')
+                "id_mahasiswa" => htmlspecialchars($this->input->post('mahasiswa_id')),
+                "id_mata_kuliah" => htmlspecialchars($this->input->post('mata_kuliah_id')),
+                "nilai" => htmlspecialchars($this->input->post('nilai')),
+                "keterangan" => htmlspecialchars($this->input->post('keterangan')),
+                "type" => htmlspecialchars($this->input->post('type'))
             );
             $addNilai = $this->ModelNilai->addNilai($data);
 
@@ -49,9 +49,9 @@ class Nilai extends CI_Controller
             return redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         } else {
             $data = array(
-                "nilai_id" => $this->input->post('nilai_id'),
-                "nilai" => $this->input->post('nilai'),
-                "keterangan" => $this->input->post('keterangan'),
+                "nilai_id" => htmlspecialchars($this->input->post('nilai_id')),
+                "nilai" => htmlspecialchars($this->input->post('nilai')),
+                "keterangan" => htmlspecialchars($this->input->post('keterangan')),
             );
 
             $editNilai = $this->ModelNilai->editNilai($data);
@@ -67,7 +67,7 @@ class Nilai extends CI_Controller
 
     public function deleteNilai($mata_kuliah_id, $mahasiswa_id, $nilai_id)
     {
-        $deleteNilai = $this->ModelNilai->deleteNilai($nilai_id);
+        $deleteNilai = htmlspecialchars($this->ModelNilai->deleteNilai($nilai_id));
 
         if (!$deleteNilai) {
             $this->session->set_flashdata('gagal', 'Data gagal dihapus');
