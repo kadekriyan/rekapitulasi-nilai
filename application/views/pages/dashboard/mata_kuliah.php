@@ -5,7 +5,6 @@
 
                 <div class="page-body">
                     <div class="row">
-                        <!-- card1 start -->
                         <?php $mata_kuliah_id = ''; ?>
                         <?php foreach ($detail_mata_kuliah as $mk): ?>
                             <?php $mata_kuliah_id = $mk->id; ?>

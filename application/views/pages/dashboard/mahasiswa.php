@@ -5,10 +5,6 @@
 
                 <div class="page-body">
                     <div class="row">
-
-                        <!-- <?php var_dump($mahasiswa); ?> -->
-
-                        <!-- table Start -->
                         <div class="col-md-12 col-xl-12">
                             <div class="card">
                                 <div class="card-header">
@@ -41,15 +37,6 @@
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
-                                        <!-- <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                            </tr>
-                                        </tfoot> -->
                                     </table>
                                 </div>
                             </div>
