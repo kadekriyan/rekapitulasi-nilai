@@ -28,10 +28,10 @@ class Nilai extends CI_Controller
             $addNilai = $this->ModelNilai->addNilai($data);
 
             if (!$addNilai) {
-                $this->session->set_flashdata('error', 'Data gagal ditambahkan');
+                $this->session->set_flashdata('gagal', 'Data gagal ditambahkan');
                 redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
             }
-            $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
+            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
             redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         }
     }
@@ -57,11 +57,26 @@ class Nilai extends CI_Controller
             $editNilai = $this->ModelNilai->editNilai($data);
 
             if (!$editNilai) {
-                $this->session->set_flashdata('error', 'Data gagal diperbarui');
+                $this->session->set_flashdata('gagal', 'Data gagal diperbarui');
                 redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
             }
-            $this->session->set_flashdata('success', 'Data berhasil diperbarui');
+            $this->session->set_flashdata('sukses', 'Data berhasil diperbarui');
             redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         }
     }
+
+    public function deleteNilai($mata_kuliah_id, $mahasiswa_id, $nilai_id)
+    {
+        $deleteNilai = $this->ModelNilai->deleteNilai($nilai_id);
+
+        if (!$deleteNilai) {
+            $this->session->set_flashdata('gagal', 'Data gagal dihapus');
+            ;
+        } else {
+            $this->session->set_flashdata('sukses', 'Data berhasil dihapus');
+        }
+
+        redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
+    }
+
 }

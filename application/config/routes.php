@@ -58,3 +58,4 @@ $route['dashboard/mata-kuliah/(:any)/(:any)'] = 'dashboard/mata_kuliah/$1/$2';
 $route['dashboard/mata-kuliah/mahasiswa/nilai/(:any)/(:any)'] = 'dashboard/detail_nilai_mahasiswa/$1/$2';
 $route['nilai/tambah-nilai'] = 'nilai/addNilai';
 $route['nilai/edit-nilai'] = 'nilai/editNilai';
+$route['nilai/delete-nilai/(:any)/(:any)/(:any)'] = 'nilai/deleteNilai/$1/$2/$3';

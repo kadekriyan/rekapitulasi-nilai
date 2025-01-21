@@ -149,7 +149,7 @@
                                                         </thead>
                                                         <tbody>
                                                             <?php foreach ($records as $record): ?>
-                                                                <!-- Modal -->
+
                                                                 <div class="modal fade" id="editNilaiModal<?= $record['id'] ?>"
                                                                     tabindex="-1"
                                                                     aria-labelledby="editNilaiLabel<?= $record['id'] ?>"
@@ -167,7 +167,7 @@
                                                                             <div class="modal-body">
                                                                                 <form method="POST"
                                                                                     action="<?= base_url('nilai/edit-nilai') ?>">
-                                                                                    <!-- Hidden Fields -->
+
                                                                                     <input type="hidden" class="form-control"
                                                                                         id="mahasiswa_id" name="mahasiswa_id"
                                                                                         value="<?= $detail_mahasiswa[0]->id ?>">
@@ -177,8 +177,6 @@
                                                                                     <input type="hidden" class="form-control"
                                                                                         id="nilai_id" name="nilai_id"
                                                                                         value="<?= $record['id'] ?>">
-
-                                                                                    <!-- Nilai Input -->
                                                                                     <div class="mb-3">
                                                                                         <label for="nilai<?= $record['id'] ?>"
                                                                                             class="form-label">Nilai</label>
@@ -188,8 +186,6 @@
                                                                                             value="<?= $record['nilai'] ?>"
                                                                                             required>
                                                                                     </div>
-
-                                                                                    <!-- Keterangan Textarea -->
                                                                                     <div class="mb-3">
                                                                                         <label for="keterangan<?= $record['id'] ?>"
                                                                                             class="form-label">Keterangan</label>
@@ -198,8 +194,6 @@
                                                                                             name="keterangan" rows="3"
                                                                                             required><?= $record['keterangan'] ?></textarea>
                                                                                     </div>
-
-                                                                                    <!-- Modal Footer -->
                                                                                     <div class="modal-footer">
                                                                                         <button type="button"
                                                                                             class="btn btn-secondary"
@@ -212,20 +206,17 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-                                                                <!-- Table Row -->
                                                                 <tr>
                                                                     <td><?= $record['nilai'] ?></td>
                                                                     <td><?= $record['keterangan'] ?></td>
                                                                     <td>
-                                                                        <!-- Edit Button -->
                                                                         <a href="#" class="btn hor-grd btn-grd-warning btn-sm mr-2"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#editNilaiModal<?= $record['id'] ?>">
                                                                             <i class="ti-pencil-alt"></i><span>Edit</span>
                                                                         </a>
-                                                                        <!-- Hapus Button -->
-                                                                        <a href="#" class="btn hor-grd btn-grd-danger btn-sm">
+                                                                        <a href="<?= base_url('nilai/delete-nilai/' . $detail_mata_kuliah[0]->id . '/' . $detail_mahasiswa[0]->id . '/' . $record['id']) ?>"
+                                                                            class="btn hor-grd btn-grd-danger btn-sm">
                                                                             <i class="ti-trash"></i><span>Hapus</span>
                                                                         </a>
                                                                     </td>
