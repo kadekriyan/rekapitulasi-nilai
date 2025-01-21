@@ -31,11 +31,24 @@ class ModelNilai extends CI_Model
     public function addNilai($data)
     {
         if ($this->db->insert('nilai_mata_kuliah_mahasiswa', $data)) {
-            // echo "Data berhasil ditambahkan.";
             return $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
 
         } else {
             return $this->session->set_flashdata('gagal', 'Data gagal ditambahkan');
+        }
+    }
+    public function editNilai($data)
+    {
+        $this->db->set('nilai', $data['nilai']);
+        $this->db->set('keterangan', $data['keterangan']);
+        $this->db->where('id', $data['nilai_id']);
+
+        echo ($data->nilai);
+
+        if ($this->db->update('nilai_mata_kuliah_mahasiswa')) {
+            return $this->session->set_flashdata('success', 'Data berhasil diperbarui.');
+        } else {
+            return $this->session->set_flashdata('error', 'Data gagal diperbarui.');
         }
     }
 

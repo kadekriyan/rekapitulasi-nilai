@@ -1,14 +1,13 @@
 <div class="pcoded-content">
     <div class="pcoded-inner-content">
-        <div class="main-body">p
+        <div class="main-body">
             <div class="page-wrapper">
-                <!-- <?php echo $this->session->flashdata('error'); ?> -->
-                <!-- <?php echo $this->session->flashdata('success'); ?> -->
 
                 <div class="page-body">
-                    <a class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#tambahNilaiModal">
-                        <i class="ti-plus"></i>
-                        <span>Tambah Nilai</span>
+                    <a class="btn hor-grd btn-grd-primary mb-4 btn " data-bs-toggle="modal"
+                        data-bs-target="#tambahNilaiModal">
+                        <i class="ti-plus text-white"></i>
+                        <span class="text-white">Tambah Nilai</span>
                     </a>
 
                     <div class="modal fade" id="tambahNilaiModal" tabindex="-1" aria-labelledby="tambahNilaiModalLabel"
@@ -55,7 +54,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="row">
 
@@ -151,12 +149,89 @@
                                                         </thead>
                                                         <tbody>
                                                             <?php foreach ($records as $record): ?>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="editNilaiModal<?= $record['id'] ?>"
+                                                                    tabindex="-1"
+                                                                    aria-labelledby="editNilaiLabel<?= $record['id'] ?>"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title"
+                                                                                    id="editNilaiLabel<?= $record['id'] ?>">Edit
+                                                                                    Penilaian</h5>
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form method="POST"
+                                                                                    action="<?= base_url('nilai/edit-nilai') ?>">
+                                                                                    <!-- Hidden Fields -->
+                                                                                    <input type="hidden" class="form-control"
+                                                                                        id="mahasiswa_id" name="mahasiswa_id"
+                                                                                        value="<?= $detail_mahasiswa[0]->id ?>">
+                                                                                    <input type="hidden" class="form-control"
+                                                                                        id="mata_kuliah_id" name="mata_kuliah_id"
+                                                                                        value="<?= $detail_mata_kuliah[0]->id ?>">
+                                                                                    <input type="hidden" class="form-control"
+                                                                                        id="nilai_id" name="nilai_id"
+                                                                                        value="<?= $record['id'] ?>">
+
+                                                                                    <!-- Nilai Input -->
+                                                                                    <div class="mb-3">
+                                                                                        <label for="nilai<?= $record['id'] ?>"
+                                                                                            class="form-label">Nilai</label>
+                                                                                        <input type="number" class="form-control"
+                                                                                            id="nilai<?= $record['id'] ?>"
+                                                                                            name="nilai"
+                                                                                            value="<?= $record['nilai'] ?>"
+                                                                                            required>
+                                                                                    </div>
+
+                                                                                    <!-- Keterangan Textarea -->
+                                                                                    <div class="mb-3">
+                                                                                        <label for="keterangan<?= $record['id'] ?>"
+                                                                                            class="form-label">Keterangan</label>
+                                                                                        <textarea class="form-control"
+                                                                                            id="keterangan<?= $record['id'] ?>"
+                                                                                            name="keterangan" rows="3"
+                                                                                            required><?= $record['keterangan'] ?></textarea>
+                                                                                    </div>
+
+                                                                                    <!-- Modal Footer -->
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button"
+                                                                                            class="btn btn-secondary"
+                                                                                            data-bs-dismiss="modal">Tutup</button>
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-primary">Simpan</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Table Row -->
                                                                 <tr>
                                                                     <td><?= $record['nilai'] ?></td>
                                                                     <td><?= $record['keterangan'] ?></td>
-                                                                    <td>-</td>
+                                                                    <td>
+                                                                        <!-- Edit Button -->
+                                                                        <a href="#" class="btn hor-grd btn-grd-warning btn-sm mr-2"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#editNilaiModal<?= $record['id'] ?>">
+                                                                            <i class="ti-pencil-alt"></i><span>Edit</span>
+                                                                        </a>
+                                                                        <!-- Hapus Button -->
+                                                                        <a href="#" class="btn hor-grd btn-grd-danger btn-sm">
+                                                                            <i class="ti-trash"></i><span>Hapus</span>
+                                                                        </a>
+                                                                    </td>
                                                                 </tr>
                                                             <?php endforeach; ?>
+
                                                         </tbody>
                                                     </table>
                                                 </div>
