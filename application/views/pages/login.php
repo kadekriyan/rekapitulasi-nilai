@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/style/style.css'); ?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?= base_url(); ?>assets/scripts/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="<?= base_url(); ?>assets/images/logo-amikom-ungu.png" type="image/x-icon">
     <title>Login</title>
 </head>
 
