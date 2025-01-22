@@ -31,10 +31,10 @@ class ModelNilai extends CI_Model
     public function addNilai($data)
     {
         if ($this->db->insert('nilai_mata_kuliah_mahasiswa', $data)) {
-            return $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+            return true;
 
         } else {
-            return $this->session->set_flashdata('gagal', 'Data gagal ditambahkan');
+            return false;
         }
     }
     public function editNilai($data)
@@ -46,9 +46,9 @@ class ModelNilai extends CI_Model
         echo ($data->nilai);
 
         if ($this->db->update('nilai_mata_kuliah_mahasiswa')) {
-            return $this->session->set_flashdata('sukses', 'Data berhasil diperbarui.');
+            return true;
         } else {
-            return $this->session->set_flashdata('gagal', 'Data gagal diperbarui.');
+            return false;
         }
     }
 
@@ -56,9 +56,9 @@ class ModelNilai extends CI_Model
     {
         $this->db->where('id', $data);
         if ($this->db->delete('nilai_mata_kuliah_mahasiswa')) {
-            return $this->session->set_flashdata('sukses', 'Data berhasil dihapus');
+            return true;
         } else {
-            return $this->session->set_flashdata('gagal', 'Data gagal dihapus');
+            return false;
         }
     }
 

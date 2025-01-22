@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="<?= base_url('assets/style/style.css'); ?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<?= base_url(); ?>assets/scripts/sweetalert2.all.min.js"></script>
     <title>Login</title>
 </head>
 
 <body class="overflow-hidden">
-    <?php
-    if ($this->session->flashdata('error')): ?>
-    <div style="color: red;">
-        <?= $this->session->flashdata('error'); ?>
-    </div>
-    <?php endif; ?>
+    <div class="flash-data-gagal" data-flashdata="<?= $this->session->flashdata('error'); ?>"></div>
 
     <div class="py-2 bg-ungu d-flex">
         <div class="px-4 py-2">
@@ -46,16 +42,6 @@
                 <div class="container">
                     <span class="text-center">
                         <h3>Login Dosen</h3>
-                        <?php
-                        if (isset($_POST['login'])) {
-                            if ($login) {
-                                ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?= $login; ?>
-                        </div>
-                        <?php }
-                        }
-                        ?>
                     </span>
                     <hr>
                     <label for="nik" class="form-label">NIK</label>
@@ -75,14 +61,16 @@
 
         </div>
     </div>
-    <div class="container justify-content-center footer-login mt-2">
+    <!-- <div class="container justify-content-center footer-login mt-2">
         <span>
             <h6>Don't have a account ? <a href="#">Register</a> </h5>
         </span>
-    </div>
+    </div> -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>assets/template-assets/js/jquery/jquery.min.js"></script>
+    <script src="<?= base_url(); ?>assets/scripts/script.js"></script>
 </body>
 
 </html>

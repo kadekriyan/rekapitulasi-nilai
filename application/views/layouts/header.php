@@ -35,11 +35,13 @@
         href="<?= base_url(); ?>assets/template-assets/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <script src="<?= base_url(); ?>assets/scripts/sweetalert2.all.min.js"></script>
 
 </head>
 
 <body>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('success'); ?>"></div>
+    <div class="flash-data-gagal" data-flashdata="<?= $this->session->flashdata('error'); ?>"></div>
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">

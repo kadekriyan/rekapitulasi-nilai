@@ -216,7 +216,7 @@
                                                                             <i class="ti-pencil-alt"></i><span>Edit</span>
                                                                         </a>
                                                                         <a href="<?= base_url('nilai/delete-nilai/' . $detail_mata_kuliah[0]->id . '/' . $detail_mahasiswa[0]->id . '/' . $record['id']) ?>"
-                                                                            class="btn hor-grd btn-grd-danger btn-sm">
+                                                                            class="btn hor-grd btn-grd-danger btn-sm tombol-hapus">
                                                                             <i class="ti-trash"></i><span>Hapus</span>
                                                                         </a>
                                                                     </td>

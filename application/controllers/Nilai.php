@@ -27,12 +27,14 @@ class Nilai extends CI_Controller
             );
             $addNilai = $this->ModelNilai->addNilai($data);
 
-            if (!$addNilai) {
-                $this->session->set_flashdata('gagal', 'Data gagal ditambahkan');
+            if ($addNilai) {
+                $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
+                redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
+            } else {
+
+                $this->session->set_flashdata('error', 'Data gagal ditambahkan');
                 redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
             }
-            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
-            redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         }
     }
     public function editNilai()
@@ -57,10 +59,10 @@ class Nilai extends CI_Controller
             $editNilai = $this->ModelNilai->editNilai($data);
 
             if (!$editNilai) {
-                $this->session->set_flashdata('gagal', 'Data gagal diperbarui');
+                $this->session->set_flashdata('error', 'Data gagal diperbarui');
                 redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
             }
-            $this->session->set_flashdata('sukses', 'Data berhasil diperbarui');
+            $this->session->set_flashdata('success', 'Data berhasil diperbarui');
             redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
         }
     }
@@ -70,10 +72,10 @@ class Nilai extends CI_Controller
         $deleteNilai = htmlspecialchars($this->ModelNilai->deleteNilai($nilai_id));
 
         if (!$deleteNilai) {
-            $this->session->set_flashdata('gagal', 'Data gagal dihapus');
+            $this->session->set_flashdata('error', 'Data gagal dihapus');
             ;
         } else {
-            $this->session->set_flashdata('sukses', 'Data berhasil dihapus');
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
         }
 
         redirect('dashboard/mata-kuliah/mahasiswa/nilai/' . $mata_kuliah_id . '/' . $mahasiswa_id);
