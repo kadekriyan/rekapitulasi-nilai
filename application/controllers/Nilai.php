@@ -6,6 +6,9 @@ class Nilai extends CI_Controller
 {
     public function addNilai()
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $this->form_validation->set_rules('mahasiswa_id', 'Mahasiswa_Id', 'required');
         $this->form_validation->set_rules('mata_kuliah_id', 'Mata_Kuliah_Id', 'required');
         $this->form_validation->set_rules('nilai', 'Nilai', 'required');
@@ -39,6 +42,9 @@ class Nilai extends CI_Controller
     }
     public function editNilai()
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $this->form_validation->set_rules('mahasiswa_id', 'Mahasiswa_Id', 'required');
         $this->form_validation->set_rules('mata_kuliah_id', 'Mata_Kuliah_Id', 'required');
         $this->form_validation->set_rules('nilai_id', 'Nilai_Id', 'required');
@@ -69,6 +75,9 @@ class Nilai extends CI_Controller
 
     public function deleteNilai($mata_kuliah_id, $mahasiswa_id, $nilai_id)
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $deleteNilai = htmlspecialchars($this->ModelNilai->deleteNilai($nilai_id));
 
         if (!$deleteNilai) {

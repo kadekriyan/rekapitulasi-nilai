@@ -36,6 +36,9 @@ class Dashboard extends CI_Controller
 
     public function mahasiswa()
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $dosen_id = $this->session->userdata('dosen_id');
         $mata_kuliah = $this->ModelMataKuliah->getAll($dosen_id);
         $data_matakuliah['mata_kuliah'] = $mata_kuliah;
@@ -51,6 +54,9 @@ class Dashboard extends CI_Controller
 
     public function mata_kuliah($dosen_id, $mata_kuliah_id)
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $dosen_id = $this->session->userdata('dosen_id');
         $mata_kuliah = $this->ModelMataKuliah->getAll($dosen_id);
         $data_matakuliah['mata_kuliah'] = $mata_kuliah;
@@ -71,6 +77,9 @@ class Dashboard extends CI_Controller
 
     public function detail_nilai_mahasiswa($mata_kuliah_id, $mahasiswa_id)
     {
+        if (!$this->session->userdata('dosen_id')) {
+            redirect('login');
+        }
         $dosen_id = $this->session->userdata('dosen_id');
         $mata_kuliah = $this->ModelMataKuliah->getAll($dosen_id);
         $data_matakuliah['mata_kuliah'] = $mata_kuliah;
