@@ -160,9 +160,10 @@
                                                                                 <h5 class="modal-title"
                                                                                     id="editNilaiLabel<?= $record['id'] ?>">Edit
                                                                                     Penilaian</h5>
-                                                                                <button type="button" class="btn-close"
-                                                                                    data-bs-dismiss="modal"
-                                                                                    aria-label="Close"></button>
+                                                                                <button type="button" data-bs-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <i class="ti-close"></i>
+                                                                                </button>
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <form method="POST"
